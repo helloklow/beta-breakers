@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
-  has_many :authored_rootes, class_name: 'Roote'
-  has_many :comments
-  has_many :commented_rootes, through: :comments, source: 'roote'
+  belongs_to :user
+  belongs_to :roote
 end
