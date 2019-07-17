@@ -5,7 +5,7 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
     validates :password, presence: true, length: {minimum: 5}
 
-    has_many :authored_rootes, class_name: 'roote'
+    has_many :authored_rootes, class_name: 'Roote'
     has_many :comments
     has_many :commented_rootes, through: :comments, source: 'roote'
 end
