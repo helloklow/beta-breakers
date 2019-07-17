@@ -3,7 +3,7 @@ class CreateRootes < ActiveRecord::Migration[5.2]
     create_table :rootes do |t|
       t.string :name
       t.text :content
-      t.integer :user_id
+      t.integer :author_id
 
       t.timestamps
     end
