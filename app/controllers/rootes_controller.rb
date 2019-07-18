@@ -29,6 +29,6 @@ class RootesController < ApplicationController
     private 
 
     def roote_params 
-        params.require(:roote).permit(:name, :content,)
+        params.require(:roote).permit(:name, :category, :location, :difficulty, :content)
     end
 end
