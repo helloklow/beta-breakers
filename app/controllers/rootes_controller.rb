@@ -4,8 +4,8 @@ class RootesController < ApplicationController
     end 
 
     def create 
-        @roote = Roote.new(roote_params)
         @user = session[:user_id]
+        @roote = Roote.new(roote_params)
         @roote.author_id = @user
         if @roote.save 
             redirect_to roote_path(@roote)
@@ -20,6 +20,20 @@ class RootesController < ApplicationController
             @rootes = User.find(params[:user_id]).rootes
         else 
             @rootes = Roote.all 
+        end
+    end 
+
+    def edit 
+        @roote = Roote.find(params[:id])
+    end 
+
+    def update 
+        @user = session[:user_id]
+        @roote = Roote.find(params[:id])
+        if @roote.update(roote_params)
+            redirect_to roote_path(@roote)
+        else 
+            redirect_to edit_roote_path(@roote)
         end
     end 
 

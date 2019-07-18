@@ -1,0 +1,26 @@
+<center>
+<h1> Create New Route </h1>
+
+<%= form_for([@user, @roote]) do |f| %> 
+    <%= f.label :name %>: 
+    <%= f.text_field :name %><br>
+
+    <%= f.label :location %>: 
+    <%= f.text_field :location %><br>
+
+    <%= f.label :category %>: 
+    <%= f.radio_button :category, "Canyon" %> <small>Canyon</small>
+    <%= f.radio_button :category, "Boulder" %> <small>Boulder</small>
+    <%= f.radio_button :category, "Sport" %> <small>Sport</small>
+    <%= f.radio_button :category, "Trad/Aid" %> <small>Trad/Aid</small>
+    <%= f.radio_button :category, "Ice/Alpine" %> <small>Ice/Alpine</small><br>
+
+    <%= f.label :difficulty %>: 
+    <%= f.text_field :difficulty %><br>
+
+    <%= f.label :content %>: 
+    <%= f.text_area :content %><br>
+
+    <%= f.submit 'Create Route' %>
+<% end %>
+</center>
