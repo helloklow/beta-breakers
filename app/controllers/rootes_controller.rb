@@ -1,10 +1,11 @@
 class RootesController < ApplicationController
+    before_action :set_user, only: [:create, :index, :update, :show, :destroy]
+    
     def new 
         @roote = Roote.new 
     end 
 
     def create 
-        @user = session[:user_id]
         @roote = Roote.new(roote_params)
         @roote.author_id = @user
         if @roote.save 
@@ -15,7 +16,6 @@ class RootesController < ApplicationController
     end 
 
     def index
-        @user = session[:user_id]
         if params[:user_id]
             @rootes = User.find(params[:user_id]).rootes
         else 
@@ -28,7 +28,6 @@ class RootesController < ApplicationController
     end 
 
     def update 
-        @user = session[:user_id]
         @roote = Roote.find(params[:id])
         if @roote.update(roote_params)
             redirect_to roote_path(@roote)
@@ -39,11 +38,9 @@ class RootesController < ApplicationController
 
     def show 
         @roote = Roote.find(params[:id])
-        @user = session[:user_id]
     end
 
     def destroy 
-        @user = session[:user_id]
         @roote = Roote.find(params[:id])
         if @roote.user == @user 
             @roote.destroy
@@ -55,5 +52,9 @@ class RootesController < ApplicationController
 
     def roote_params 
         params.require(:roote).permit(:name, :category, :location, :difficulty, :content)
+    end
+
+    def set_user 
+        @user = session[:user_id]
     end
 end
