@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
+  delete '/logout', to: 'sessions#logout'
+
   resources :comments
   resources :rootes
   resources :users, except: [:new, :create]
