@@ -5,6 +5,6 @@
 
 <p> <%= @roote.content %> </p><br>
 
-<%= link_to 'Home', user_path(@user) %>
+<%= link_to 'Home', user_path(@user) %> | <%= link_to 'Edit', edit_roote_path(@roote), method: :get %> | <%= link_to 'Delete', roote_path(@roote), method: :delete %>
 
 </center>
