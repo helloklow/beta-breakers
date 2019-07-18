@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def home
   end
 
@@ -11,5 +10,4 @@ class SessionsController < ApplicationController
 
   def logout
   end
-  
 end
