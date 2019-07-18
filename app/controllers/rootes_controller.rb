@@ -6,11 +6,11 @@ class RootesController < ApplicationController
     def create 
         @roote = Roote.new(roote_params)
         @user = session[:user_id]
-        @roote.user_id = @user
+        @roote.author_id = @user
         if @roote.save 
-            redirect_to user_roote_path(@user, @roote)
+            redirect_to roote_path(@roote)
         else 
-            redirect_to new_user_roote_path(@user, @roote)
+            redirect_to new_roote_path(@roote)
         end
     end 
 
