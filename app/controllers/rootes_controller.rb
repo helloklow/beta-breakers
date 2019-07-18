@@ -42,6 +42,15 @@ class RootesController < ApplicationController
         @user = session[:user_id]
     end
 
+    def destroy 
+        @user = session[:user_id]
+        @roote = Roote.find(params[:id])
+        if @roote.user == @user 
+            @roote.destroy
+            redirect_to user_path(@user)
+        end
+    end
+
     private 
 
     def roote_params 
