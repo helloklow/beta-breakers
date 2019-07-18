@@ -16,6 +16,18 @@ class UsersController < ApplicationController
     def show 
         @user = User.find(params[:id])
     end
+
+    def rootes_index 
+        @user = User.find(params[:id])
+        @rootes = @user.authored_rootes
+        render template: 'rootes/index'
+    end
+
+    def roote 
+        @user = User.find(params[:id])
+        @roote = Roote.find(params[:roote_id])
+        render template: 'rootes/show'
+    end
     
     private 
 
