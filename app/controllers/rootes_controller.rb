@@ -8,7 +8,7 @@ class RootesController < ApplicationController
         @user = session[:user_id]
         @roote.author_id = @user
         if @roote.save 
-            redirect_to roote_path(@roote)
+            redirect_to user_roote_path(@user, @roote)
         else 
             redirect_to new_roote_path(@roote)
         end
