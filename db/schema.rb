@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_012935) do
+ActiveRecord::Schema.define(version: 2019_07_18_013605) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_012935) do
 
   create_table "rootes", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "category"
     t.string "location"
     t.string "difficulty"
     t.text "content"
