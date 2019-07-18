@@ -14,7 +14,8 @@ class RootesController < ApplicationController
         end
     end 
 
-    def index 
+    def index
+        @user = session[:user_id]
         if params[:user_id]
             @rootes = User.find(params[:user_id]).rootes
         else 
@@ -23,7 +24,8 @@ class RootesController < ApplicationController
     end 
 
     def show 
-        @rootes = Roote.find(params[:id])
+        @roote = Roote.find(params[:id])
+        @user = session[:user_id]
     end
 
     private 

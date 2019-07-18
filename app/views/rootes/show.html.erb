@@ -1,8 +1,10 @@
 <center>
-<h1> <%= @roote.name %> </h1>
+<h1> <%= @roote.name.capitalize %> </h1>
 
-<h2> <%= @roote.category %> at <%= @roote.location %> (<%= @roote.difficulty %>) </h2>
+<h4> <%= @roote.category %> at <%= @roote.location.split.map(&:capitalize).join(' ') %> (<%= @roote.difficulty.capitalize %>) </h4><br>
 
-<p> <%= @roote.content %> </p>
+<p> <%= @roote.content %> </p><br>
+
+<%= link_to "Home", user_path(@user) %>
 
 </center>
