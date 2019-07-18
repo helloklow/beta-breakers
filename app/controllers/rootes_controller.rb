@@ -8,7 +8,7 @@ class RootesController < ApplicationController
         @user = session[:user_id]
         @roote.author_id = @user
         if @roote.save 
-            redirect_to user_roote_path(@user, @roote)
+            redirect_to roote_path(@roote)
         else 
             redirect_to new_roote_path(@roote)
         end
@@ -18,7 +18,7 @@ class RootesController < ApplicationController
         if params[:user_id]
             @rootes = User.find(params[:user_id]).rootes
         else 
-            @rootes = Rootes.all 
+            @rootes = Roote.all 
         end
     end 
 
