@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get '/', to: 'sessions#home'
+  root 'sessions#home'
+
+  get '/auth/google_oauth2/callback', to: 'sessions#create'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
