@@ -2,9 +2,7 @@
 <h1> All Routes </h1>
 
 <% @rootes.each do |r| %>
-    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) 
-    <%= button_to 'Edit', edit_roote_path(@roote), method: :get %>
-    <%= button_to 'Delete', roote_path(@roote), method: :delete %>
+    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %>
     <br>
 <% end %><br>
 

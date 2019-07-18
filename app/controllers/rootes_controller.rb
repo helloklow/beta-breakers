@@ -42,7 +42,7 @@ class RootesController < ApplicationController
 
     def destroy 
         @roote = Roote.find(params[:id])
-        if @roote.user == @user 
+        if @roote.author_id == @user 
             @roote.destroy
             redirect_to user_path(@user)
         end
