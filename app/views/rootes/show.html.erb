@@ -1,5 +1,5 @@
 <center>
-<h1> <%= @roote.name.capitalize %> </h1>
+<h1> <%= @roote.name.split.map(&:capitalize).join(' ') %> </h1>
 
 <h4> <%= @roote.category %> at <%= @roote.location.split.map(&:capitalize).join(' ') %> (<%= @roote.difficulty.capitalize %>) </h4><br>
 
