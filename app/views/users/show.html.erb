@@ -6,7 +6,7 @@
 
 <h4> Your Beta Collection: </h4>
 <% @rootes.each do |r| %>
-    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %>
+    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small>
     <br>
 <% end %>
 <br>
