@@ -5,6 +5,5 @@ class User < ApplicationRecord
     has_many :comments
     has_many :commented_rootes, through: :comments, source: 'Roote'
 
-    validates :username, presence: true, uniqueness: true
-    validates :email, presence: true, uniqueness: true
+    validates :username, :email, presence: true, uniqueness: true
 end

@@ -3,9 +3,5 @@ class Roote < ApplicationRecord
   has_many :comments
   has_many :commentors, through: :comments, source: 'User'
 
-  validates :name, presence: true
-  validates :content, presence: true
-  validates :category, presence: true
-  validates :location, presence: true
-  validates :difficulty, presence: true
+  validates :name, :content, :category, :location, :difficulty, presence: true
 end
