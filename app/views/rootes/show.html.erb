@@ -7,7 +7,7 @@
 
 <h5> Comments: </h5>
 <%= @roote.comments.each do |c| %>
-    <b><%= c.user.username.capitalize %> says:</b> <%= c.content %> <em>(<%= c.rating %>/5 stars)</em><br>
+    <b><%= c.user.username.capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars</b><br>
 <% end %><br><br>
 
 <%= button_to 'Add Comment', new_roote_comment_path(@roote), method: :get %><br>
