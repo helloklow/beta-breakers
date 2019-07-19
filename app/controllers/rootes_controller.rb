@@ -11,7 +11,7 @@ class RootesController < ApplicationController
         if @roote.save 
             redirect_to roote_path(@roote)
         else 
-            redirect_to new_roote_path(@roote)
+            redirect_to new_roote_path
         end
     end 
 

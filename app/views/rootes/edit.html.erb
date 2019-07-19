@@ -1,7 +1,7 @@
 <center>
 <h1> Edit Your Beta </h1>
 
-<%= form_for([@user, @roote]) do |f| %> 
+<%= form_for [@user, @roote] do |f| %> 
     <%= render partial: "form", locals: {f: f} %>
     <%= f.submit 'Edit' %>
 <% end %>
