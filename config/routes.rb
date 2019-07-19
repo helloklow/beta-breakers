@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-  resources :rootes
-  resources :users, only: [:show] do
-    resources :comments, except: [:edit, :update]
+  resources :rootes do 
+    resources :comments, except: [:index, :edit, :update]
   end 
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

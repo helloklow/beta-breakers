@@ -1,7 +1,7 @@
 <center>
 <h1> Add a Comment </h1><br>
 
-<%= form_for [@user, @comment] do |f| %> 
+<%= form_for [@roote, @comment] do |f| %> 
     <%= f.label :content %>: 
     <%= f.text_area :content %><br><br>
 
@@ -12,7 +12,6 @@
     <%= f.radio_button :rating, "4" %> <small> 4 </small>
     <%= f.radio_button :rating, "5" %> <small> 5 </small><br>
     <small> (1 to 5 stars) </small><br><br>
-    
 
     <%= f.submit 'Add Comment' %>
 <% end %>

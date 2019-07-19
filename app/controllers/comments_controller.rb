@@ -1,26 +1,17 @@
 class CommentsController < ApplicationController
-    before_action :set_user, only: [:create, :index, :update, :show, :destroy]
-
     def new 
-        @user = User.find(params[:user_id])
+        @roote = Roote.find(params[:roote_id])
         @comment = Comment.new 
     end 
 
     def create 
         @comment = Comment.new(comment_params)
+        @comment.roote_id = Comment.find(params[:roote][:id])
+        @comment.user_id = session[:user_id]
         if @comment.save 
-            @roote = @comment.roote_id
-            redirect_to roote_path(@roote)
+            redirect_to roote_comment_path(@comment)
         else 
-            redirect_to new_user_comment_path
-        end
-    end 
-
-    def index
-        if params[:user_id]
-            @comments = User.find(params[:user_id]).comments
-        else 
-            @comments = Comments.all 
+            redirect_to new_roote_comment_path
         end
     end  
 
@@ -40,9 +31,5 @@ class CommentsController < ApplicationController
 
     def comment_params 
         params.require(:comment).permit(:content, :rating)
-    end
-
-    def set_user 
-        @user = session[:user_id]
     end
 end
