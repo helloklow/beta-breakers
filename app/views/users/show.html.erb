@@ -1,11 +1,14 @@
 <center>
 <h1> Welcome, <%= @user.username.capitalize %>! </h1><br>
 
-<%= button_to 'Add New Route', new_roote_path(@user), method: :get %><br>
-<%= button_to 'View All Routes', rootes_path, method: :get %><br>
+<%= button_to 'Browse All Beta', rootes_path, method: :get %><br>
+<%= button_to 'Add New Beta', new_roote_path(@user), method: :get %><br>
 
-<h4> Your Recent Routes: </h4>
-
+<h4> Your Beta Collection: </h4>
+<% @rootes.each do |r| %>
+    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %>
+    <br>
+<% end %>
 <br>
 
 <%= link_to 'Logout', logout_path, method: :delete %>

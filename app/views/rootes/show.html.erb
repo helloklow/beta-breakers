@@ -1,10 +1,10 @@
 <center>
 <h1> <%= @roote.name.split.map(&:capitalize).join(' ') %> </h1>
 
-<h4> <%= @roote.category %> at <%= @roote.location.split.map(&:capitalize).join(' ') %> (<%= @roote.difficulty.capitalize %>) </h4><br>
+<h4> <%= @roote.category %> at <%= @roote.location.split.map(&:capitalize).join(' ') %> (<%= @roote.difficulty.upcase %>) </h4><br>
 
 <p> <%= @roote.content %> </p><br>
 
-<%= link_to 'Home', user_path(@user) %> | <%= link_to 'Edit', edit_roote_path(@roote), method: :get %> | <%= link_to 'Delete', roote_path(@roote), method: :delete %>
+<%= link_to 'Home', user_path(@user) %>
 
 </center>

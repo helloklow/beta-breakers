@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
+        @rootes = @user.authored_rootes
     end
 
     def rootes_index 
