@@ -1,8 +1,8 @@
 <center>
 <h1> Welcome, <%= @user.username.capitalize %>! </h1><br>
 
-<%= button_to 'Browse All Beta', rootes_path, method: :get %><br>
 <%= button_to 'Add New Beta', new_roote_path(@user), method: :get %><br>
+<%= button_to 'Browse All Beta', rootes_path, method: :get %><br><br><br>
 
 <h4> Your Beta Collection: </h4>
 <% @rootes.each do |r| %>
