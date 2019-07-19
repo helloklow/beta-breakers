@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
 
   validates :content, presence: true
 
-  scope :all_by_user, -> (user) { where(user: user) }
+  #scope :all_by_user, -> (user) { where(user: user) }
 end

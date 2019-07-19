@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
+  get 'rootes/canyon'
+  get 'rootes/boulder'
+  get 'rootes/sport'
+  get 'rootes/trad_aid'
+  get 'rootes/ice_alpine'
+
   #get '/users/comments', to: 'users#comments'
 
   resources :users, only: [:show]
