@@ -1,11 +1,9 @@
 <center>
-<h1> All Routes </h1>
+<h1> All Beta </h1>
 
 <% @rootes.each do |r| %>
-    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)
-    <br>
+    <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)<br>
 <% end %><br>
 
-<%= link_to 'Home', user_path(@user) %>
-
+<%= link_to 'Home', user_path(@user) %> | <%= link_to 'Logout', logout_path, method: :delete %>
 </center>
