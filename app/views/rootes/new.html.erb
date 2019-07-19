@@ -3,9 +3,6 @@
 
 <%= form_for([@user, @roote]) do |f| %> 
     <%= render partial: "form", locals: {f: f} %>
-    <%= f.submit 'Create Beta' %>
-<% end %><br>
-
-<%= link_to 'Home', user_path(@user) %>
-
+    <%= f.submit 'Create' %>
+<% end %>
 </center>
