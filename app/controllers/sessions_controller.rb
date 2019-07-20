@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def oauth_create
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
+    @user = User.find_or_create_by(uid: oauth['uid']) do |u|
       u.name = oauth['info']['name']
       u.email = oauth['info']['email']
       u.password = SecureRandom.hex
