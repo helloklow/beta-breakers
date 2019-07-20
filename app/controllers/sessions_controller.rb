@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def oauth_create
+  def google_auth
     @user = User.find_or_create_by(uid: oauth['uid']) do |u|
       u.name = oauth['info']['name']
       u.email = oauth['info']['email']
