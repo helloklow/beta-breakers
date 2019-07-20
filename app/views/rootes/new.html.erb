@@ -1,7 +1,7 @@
 <center>
-<h1> Create Beta </h1>
+<h1> New Beta </h1><br>
 
-<%= form_for [@user, @roote] do |f| %> 
+<%= form_for @roote do |f| %> 
     <%= render partial: "form", locals: {f: f} %>
     <%= f.submit 'Create' %>
 <% end %><br><br>
