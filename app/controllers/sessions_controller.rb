@@ -18,24 +18,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def google_auth
-    @user = User.find_or_create_by(uid: oauth['uid']) do |u|
-      u.name = oauth['info']['name']
-      u.email = oauth['info']['email']
-      u.password = SecureRandom.hex
-    end 
-    session[:user_id] = @user.id
-    redirect_to user_path(@user)
-  end
-
   def logout
     session.clear
     redirect_to root_path
-  end
-
-  private 
-
-  def oauth 
-    request.env['omniauth.auth']
   end
 end
