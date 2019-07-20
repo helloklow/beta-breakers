@@ -27,6 +27,19 @@ class RootesController < ApplicationController
         end
     end 
 
+    def edit 
+        @roote = Roote.find(params[:id])
+    end 
+
+    def update 
+        @roote = Roote.find(params[:id])
+        if @roote.update(roote_params)
+            redirect_to roote_path(@roote)
+        else 
+            redirect_to edit_roote_path(@roote)
+        end
+    end 
+
     def canyon 
         @rootes = Roote.canyon
     end
@@ -46,19 +59,6 @@ class RootesController < ApplicationController
     def ice_alpine
         @rootes = Roote.ice_alpine
     end
-
-    def edit 
-        @roote = Roote.find(params[:id])
-    end 
-
-    def update 
-        @roote = Roote.find(params[:id])
-        if @roote.update(roote_params)
-            redirect_to roote_path(@roote)
-        else 
-            redirect_to edit_roote_path(@roote)
-        end
-    end 
 
     def destroy 
         @roote = Roote.find(params[:id])
