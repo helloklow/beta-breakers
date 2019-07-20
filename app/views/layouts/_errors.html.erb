@@ -1,8 +1,8 @@
-<% if object.errors.any? %>
+<% if obj.errors.any? %>
     <div id="error_explanation">
-        <h4><%= pluralize(object.errors.count, "error") %> errors occurred: </h4>
-        <% object.errors.full_messages.each do |msg| %>
+        <h4><%= pluralize(obj.errors.count, "error") %> occurred, please amend to proceed: </h4>
+        <% obj.errors.full_messages.each do |msg| %>
             <em><%= msg %></em><br>
         <% end %><br>
     </div>
-<% end %>s
+<% end %>

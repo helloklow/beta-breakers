@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
     before_action :set_roote, only: [:new, :create, :show, :destroy]
+    before_action :set_user, only: [:new, :create, :destroy]
 
-    def new 
-        @user = session[:user_id]
+    def new
         @comment = Comment.new 
     end 
 
@@ -22,7 +22,6 @@ class CommentsController < ApplicationController
     end
 
     def destroy 
-        @user = session[:user_id]
         @comment = Comment.find(params[:id])
         if @comment.user_id == @user 
             @comment.destroy
@@ -38,5 +37,9 @@ class CommentsController < ApplicationController
 
     def set_roote 
         @roote = Roote.find(params[:roote_id])
+    end
+
+    def set_user 
+        @user = session[:user_id]
     end
 end

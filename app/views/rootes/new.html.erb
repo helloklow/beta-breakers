@@ -1,7 +1,9 @@
 <center>
-<h1> New Beta </h1><br>
+<h1> New Beta </h1>
 
 <%= form_for @roote do |f| %> 
+    <%= render partial: 'layouts/errors', locals: {obj: @roote} %><br>
+    
     <%= render partial: 'form', locals: {f: f} %>
     <%= f.submit 'Create' %>
 <% end %><br><br>
