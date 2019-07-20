@@ -1,20 +1,19 @@
 <center>
-<h1> Welcome, <%= @user.username.capitalize %>! </h1><br>
+<h1> Welcome, <%= @user.username.capitalize %>! </h1>
 
-<h4> Browse Beta: </h4>
-<%= button_to 'View All', rootes_path, method: :get %>
+<h4> Browse All Beta: </h4>
 <%= link_to 'Canyon', rootes_canyon_path %><br>
 <%= link_to 'Boulder', rootes_boulder_path %><br>
 <%= link_to 'Sport', rootes_sport_path %><br>
 <%= link_to 'Trad/Aid', rootes_trad_aid_path %><br>
 <%= link_to 'Ice/Alpine', rootes_ice_alpine_path %><br><br>
-<br><br>
+<%= button_to 'View All', rootes_path, method: :get %><br><br>
 
 <h4> Your Beta Collection: </h4>
-<%= button_to 'New Beta', new_roote_path(@user), method: :get %>
 <% @rootes.each do |r| %>
     <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
-<% end %><br><br>
+<% end %><br>
+<%= button_to 'New Beta', new_roote_path(@user), method: :get %><br><br>
 
 <%= link_to 'Logout', logout_path, method: :delete %>
 <center>

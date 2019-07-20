@@ -1,5 +1,5 @@
 <center>
-<h1> Create an Account </h1>
+<h1> Create an Account </h1><br>
 
 <%= form_for @user, url: signup_path do |f| %>
     <%= render partial: 'layouts/errors', locals: {obj: @user} %>
@@ -11,7 +11,7 @@
     <%= f.text_field :username %><br>
 
     <%= f.label :password %>: 
-    <%= f.password_field :password %><br>
+    <%= f.password_field :password %><br><br>
 
     <%= f.submit 'Sign Up' %>
 <% end %>
