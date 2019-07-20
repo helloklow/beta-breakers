@@ -21,15 +21,6 @@ class CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
     end
 
-    #def index
-        #@user = session[:user_id]
-        #if params[:user_id]
-            #@comments = Comment.find(params[:user_id]).comments
-        #else 
-            #@comments = Comment.all 
-        #end
-    #end 
-
     def destroy 
         @user = session[:user_id]
         @comment = Comment.find(params[:id])

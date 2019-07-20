@@ -2,6 +2,15 @@
 <h1> Create an Account </h1>
 
 <%= form_for @user, url: signup_path do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being registered: </h4>
+            <% @user.errors.full_messages.each do |msg| %>
+                <em><%= msg %></em><br>
+            <% end %><br>
+        </div>
+    <% end %>
+    
     <%= f.label :email %>: 
     <%= f.email_field :email %><br>
 
