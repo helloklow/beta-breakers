@@ -11,7 +11,7 @@ class RootesController < ApplicationController
         if @roote.save 
             redirect_to roote_path(@roote)
         else 
-            redirect_to new_roote_path
+            render 'new'
         end
     end 
 
@@ -36,7 +36,7 @@ class RootesController < ApplicationController
         if @roote.update(roote_params)
             redirect_to roote_path(@roote)
         else 
-            redirect_to edit_roote_path(@roote)
+            render 'edit'
         end
     end 
 

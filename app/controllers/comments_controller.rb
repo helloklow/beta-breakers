@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
         if @comment.save 
             redirect_to roote_path(@roote)
         else 
-            redirect_to new_roote_comment_path
+            render 'new'
         end
     end  
 
