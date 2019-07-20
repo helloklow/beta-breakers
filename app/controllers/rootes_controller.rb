@@ -1,5 +1,5 @@
 class RootesController < ApplicationController
-    before_action :set_user, only: [:create, :index, :update, :show, :destroy]
+    before_action :set_user, only: [:new, :create, :show, :index, :edit, :update, :destroy, :canyon, :boulder, :sport, :trad_aid, :ice_alpine]
     
     def new 
         @roote = Roote.new 

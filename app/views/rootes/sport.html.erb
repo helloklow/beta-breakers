@@ -3,5 +3,7 @@
 
 <% @rootes.each do |r| %>
     <h4><%= link_to r.name, roote_path(r) %></h4>
-<% end %>
+<% end %><br><br>
+
+<%= render partial: "footer" %>
 </center>
