@@ -1,8 +1,8 @@
 <center>
-<h2> Trad / Aid Climbing Beta </h2>
+<h2> Trad / Aid Climbing Beta </h2><br>
 
 <% @rootes.each do |r| %>
-    <h4><%= link_to r.name, roote_path(r) %></h4>
+    <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
 <% end %><br><br>
 
 <%= render partial: "footer" %>

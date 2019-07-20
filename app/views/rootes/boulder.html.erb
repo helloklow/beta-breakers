@@ -2,7 +2,7 @@
 <h2> Bouldering Beta </h2><br>
 
 <% @rootes.each do |r| %>
-    <h5><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <%= r.location %></h5>
+    <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
 <% end %><br><br>
 
 <%= render partial: "footer" %>

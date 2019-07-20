@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
     before_action :set_roote, only: [:new, :create, :show, :destroy]
 
     def new 
+        @user = session[:user_id]
         @comment = Comment.new 
     end 
 
