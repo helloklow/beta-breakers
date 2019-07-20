@@ -8,13 +8,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username]) # form_for creates nested hash!
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id 
-      redirect_to user_path(@user)
-    else 
-      flash[:error] = "Sorry, username or password is incorrect."
-      redirect_to '/login'
+    if auth_hash = request.env['omniauth.auth'] # user logged in via oauth
+    else
+      @user = User.find_by(username: params[:user][:username]) # form_for creates nested hash!
+      if @user && @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id 
+        redirect_to user_path(@user)
+      else 
+        flash[:error] = 'Sorry, username or password is incorrect.'
+        redirect_to '/login'
+      end
     end
   end
 
