@@ -15,6 +15,10 @@ class RootesController < ApplicationController
         end
     end 
 
+    def show 
+        @roote = Roote.find(params[:id])
+    end
+
     def index
         if params[:user_id]
             @rootes = User.find(params[:user_id]).rootes
@@ -22,6 +26,26 @@ class RootesController < ApplicationController
             @rootes = Roote.all 
         end
     end 
+
+    def canyon 
+        @rootes = Roote.canyon
+    end
+
+    def boulder 
+        @rootes = Roote.boulder
+    end
+
+    def sport 
+        @rootes = Roote.sport
+    end
+
+    def trad_aid
+        @rootes = Roote.trad_aid
+    end
+
+    def ice_alpine
+        @rootes = Roote.ice_alpine
+    end
 
     def edit 
         @roote = Roote.find(params[:id])
@@ -35,10 +59,6 @@ class RootesController < ApplicationController
             redirect_to edit_roote_path(@roote)
         end
     end 
-
-    def show 
-        @roote = Roote.find(params[:id])
-    end
 
     def destroy 
         @roote = Roote.find(params[:id])
