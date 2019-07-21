@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'pry'
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'autoprefixer-rails'
 
 # Use ActiveStorage variant
