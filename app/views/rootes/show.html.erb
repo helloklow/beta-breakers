@@ -9,7 +9,7 @@
 
 <h5><b> Comments: </b></h5>
 <% @roote.comments.each do |c| %>
-    <b><%= c.user.username.capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars </b><br>
+    <b><%= c.user.username.split[0].capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars </b><br>
 <% end %><br>
 
 <%= button_to 'Add Comment', new_roote_comment_path(@roote), method: :get %><br><br>
