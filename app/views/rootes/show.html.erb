@@ -2,13 +2,13 @@
 <h1> <%= @roote.name.split.map(&:capitalize).join(' ') %> </h1>
 
 <h4> <%= @roote.category %> (<%= @roote.difficulty.upcase %>) </h4>
-<h5> <%= @roote.location.split.map(&:capitalize).join(' ') %> </h5><br>
+<h5> <%= @roote.location.split.map(&:capitalize).join(' ') %> </h5>
 
-<p> <%= @roote.content %> </p><br><br><br>
+<p> <%= @roote.content %> </p><br>
 
 <h5> Comments: </h5>
 <% @roote.comments.each do |c| %>
-    <b><%= c.user.username.capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars</b><br>
+    <b><p> <%= c.user.username.capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars </b></p><br>
 <% end %><br>
 
 <%= button_to 'Add Comment', new_roote_comment_path(@roote), method: :get %><br><br>
