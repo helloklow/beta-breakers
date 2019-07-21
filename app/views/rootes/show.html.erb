@@ -1,17 +1,19 @@
+<div class="styled">
 <center>
 <h1> <%= @roote.name.split.map(&:capitalize).join(' ') %> </h1>
 
-<h4> <%= @roote.category %> (<%= @roote.difficulty.upcase %>) </h4>
-<h5> <%= @roote.location.split.map(&:capitalize).join(' ') %> </h5>
+<h4><b> <%= @roote.category %> (<%= @roote.difficulty.upcase %>) </b></h4>
+<h5><b> <%= @roote.location.split.map(&:capitalize).join(' ') %> </b></h5><br>
 
-<p> <%= @roote.content %> </p><br>
+<p> <%= @roote.content %> </p><br><br>
 
-<h5> Comments: </h5>
+<h5><b> Comments: </b></h5>
 <% @roote.comments.each do |c| %>
-    <b><p> <%= c.user.username.capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars </b></p><br>
+    <b><%= c.user.username.capitalize %> says:</b> <%= c.content %> <b><%= c.rating %>/5 stars </b><br>
 <% end %><br>
 
 <%= button_to 'Add Comment', new_roote_comment_path(@roote), method: :get %><br><br>
 
 <%= render partial: "layouts/footer" %>
 </center>
+</div>

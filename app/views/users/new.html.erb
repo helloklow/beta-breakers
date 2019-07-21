@@ -1,3 +1,4 @@
+<div class="styled">
 <center>
 <h1> Create an Account </h1><br>
 
@@ -11,10 +12,11 @@
     <%= f.text_field :username %><br>
 
     <%= f.label :password %>: 
-    <%= f.password_field :password %><br><br>
+    <%= f.password_field :password %><br>
 
     <%= f.submit 'Sign Up' %>
-<% end %><br>
+<% end %><br><br>
 
 <%= render partial: "layouts/login" %>
 </center>
+</div>
