@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#logout'
-  get '/auth/github/callback', to: 'sessions#create'
+  get '/auth/facebook/callback', to: 'sessions#create'
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get 'rootes/sport'
   get 'rootes/trad_aid'
   get 'rootes/ice_alpine'
-
-  #get '/users/comments', to: 'users#comments'
 
   resources :users, only: [:show]
   resources :rootes do 
