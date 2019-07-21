@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   get 'rootes/trad_aid'
   get 'rootes/ice_alpine'
 
-  get 'creatives/index'
-
   resources :users, only: [:show]
   resources :rootes do 
     resources :comments, except: [:edit, :update]
