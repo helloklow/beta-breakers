@@ -20,15 +20,16 @@ class RootesController < ApplicationController
     def index
         if params[:user_id]
             @rootes = User.find(params[:user_id]).rootes
-        else 
+        else
             @rootes = Roote.all 
         end
-        if params[:search]
-            @rootes = Roote.where('name LIKE ?', "%#{params[:term]}%")
-        else
-            flash[:error] = "Sorry, unable to complete search."
-        end
     end 
+
+    def search 
+        @query = "%#{params[:search]}%"
+        @results = Roote.where('name LIKE ?', @query)
+        render 'index'
+    end
 
     def edit 
         @roote = Roote.find(params[:id])

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'rootes/trad_aid'
   get 'rootes/ice_alpine'
 
+  post 'rootes/search', to: 'rootes#search', as: 'search_rootes'
+
   resources :users, only: [:show]
   resources :rootes do 
     resources :comments, except: [:edit, :update]

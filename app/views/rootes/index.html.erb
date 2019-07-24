@@ -6,7 +6,7 @@
     <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
 <% end %><br><br>
 
-<%= form_tag('/rootes', method: :get) do %>
+<%= form_tag search_rootes_path do %>
     <%= text_field_tag 'search', params[:search] %>
     <%= submit_tag 'Search Routes' %>
 <% end %><br><br>
