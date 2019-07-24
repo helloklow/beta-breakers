@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :set_user, only: [:new, :create, :show, :index, :edit, :update, :destroy, :canyon, :boulder, :sport, :trad_aid, :ice_alpine]
+    before_action :set_user, only: [:new, :create, :show, :index, :edit, :update, :destroy, :search, :canyon, :boulder, :sport, :trad_aid, :ice_alpine]
 
     private
 
