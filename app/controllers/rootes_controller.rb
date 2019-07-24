@@ -23,6 +23,11 @@ class RootesController < ApplicationController
         else 
             @rootes = Roote.all 
         end
+        if params[:search]
+            @rootes = Roote.where('name LIKE ?', "%#{params[:term]}%")
+        else
+            flash[:error] = "Sorry, unable to complete search."
+        end
     end 
 
     def edit 
