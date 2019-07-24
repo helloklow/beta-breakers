@@ -1,6 +1,4 @@
-class RootesController < ApplicationController
-    before_action :set_user, only: [:new, :create, :show, :index, :edit, :update, :destroy, :canyon, :boulder, :sport, :trad_aid, :ice_alpine]
-    
+class RootesController < ApplicationController    
     def new 
         @roote = Roote.new 
     end 
@@ -72,9 +70,5 @@ class RootesController < ApplicationController
 
     def roote_params 
         params.require(:roote).permit(:name, :category, :location, :difficulty, :content)
-    end
-
-    def set_user 
-        @user = session[:user_id]
     end
 end
