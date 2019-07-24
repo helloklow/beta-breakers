@@ -18,20 +18,12 @@ class RootesController < ApplicationController
     end
 
     def index
-        @results = []
-        if params[:user_id]
-            @rootes = User.find(params[:user_id]).rootes
-        else
+        if params[:search]
+            @rootes = Roote.where('name LIKE ?', "%#{params[:search]}%")
+        else 
             @rootes = Roote.all 
         end
     end 
-
-    def search 
-        @rootes = Roote.all
-        @query = "%#{params[:search]}%"
-        @results = Roote.where('name LIKE ?', @query)
-        render 'index'
-    end
 
     def edit 
         @roote = Roote.find(params[:id])
@@ -77,6 +69,6 @@ class RootesController < ApplicationController
     private 
 
     def roote_params 
-        params.require(:roote).permit(:name, :category, :location, :difficulty, :content)
+        params.require(:roote).permit(:name, :category, :location, :difficulty, :content, :search)
     end
 end
