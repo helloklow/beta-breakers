@@ -18,12 +18,20 @@ class RootesController < ApplicationController
     end
 
     def index
-        if params[:search]
-            @rootes = Roote.where('name LIKE ?', "%#{params[:search]}%")
-        else 
+        @results = []
+        if params[:user_id]
+            @rootes = User.find(params[:user_id]).rootes
+        else
             @rootes = Roote.all 
         end
     end 
+
+    def search 
+        @rootes = Roote.all
+        @query = "%#{params[:search]}%"
+        @results = Roote.where('name LIKE ?', @query)
+        render 'index'
+    end
 
     def edit 
         @roote = Roote.find(params[:id])
