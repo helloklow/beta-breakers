@@ -14,7 +14,7 @@
 <% @rootes.each do |r| %>
     <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
 <% end %>
-<%= button_to 'New Beta', new_roote_path(@user), method: :get %><br><br>
+<%= button_to 'Add Beta', new_roote_path(@user), method: :get %><br><br>
 
 <%= link_to 'Logout', logout_path, method: :delete %><br><br>
 </center>

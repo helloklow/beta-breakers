@@ -14,7 +14,7 @@ class RootesController < ApplicationController
     end 
 
     def show 
-        @roote = Roote.find(params[:id])
+        find_roote
     end
 
     def index
@@ -30,11 +30,11 @@ class RootesController < ApplicationController
     end 
 
     def edit 
-        @roote = Roote.find(params[:id])
+        find_roote
     end 
 
     def update 
-        @roote = Roote.find(params[:id])
+        find_roote
         if @roote.update(roote_params)
             redirect_to roote_path(@roote)
         else 
@@ -62,8 +62,9 @@ class RootesController < ApplicationController
         @rootes = Roote.ice_alpine
     end
 
-    def destroy 
-        @roote = Roote.find(params[:id])
+    def destroy
+        find_roote 
+        # @roote = Roote.find(params[:id])
         if @roote.author_id == @user 
             @roote.destroy
             redirect_to user_path(@user)
@@ -74,5 +75,9 @@ class RootesController < ApplicationController
 
     def roote_params 
         params.require(:roote).permit(:name, :category, :location, :difficulty, :content)
+    end
+
+    def find_roote
+        @roote = Roote.find(params[:id])
     end
 end
