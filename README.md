@@ -1,24 +1,37 @@
-# README
+# Beta Breakers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Beta Breakers is a digital guidebook for rock climbing and canyoneering routes around the globe. Adventurers can create an account using their email address or Facebook OAuth. This is a space for adventurers to share beta for new climbing or canyoneering routes, view established beta, and add comments and ratings to entries. Go beyond the guidebook!
 
-Things you may want to cover:
+## Installation
+**Ruby 2.6.1 or higher is required.**
 
-* Ruby version
+To begin, execute the following commands:
 
-* System dependencies
+`clone repo`
 
-* Configuration
+`bundle install`
 
-* Database creation
+`rake db:migrate`
 
-* Database initialization
+## Usage
+To run, execute the following command: 
 
-* How to run the test suite
+`rails s`
 
-* Services (job queues, cache servers, search engines, etc.)
+Then, navigate to _https://localhost:3000_ in the browser.
 
-* Deployment instructions
+## Development
 
-* ...
+To release a new version, update the version number in `version.rb`. Push git commits and tags.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/kelypso/beta-breakers. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the Beta Breakers project codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'observant-logger-0316'/climb-collection/blob/master/CODE_OF_CONDUCT.md).
