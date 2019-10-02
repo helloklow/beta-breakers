@@ -14,18 +14,21 @@ class UsersController < ApplicationController
     end
 
     def show 
-        @user = User.find(params[:id])
+        find_user
+        #@user = User.find(params[:id])
         @rootes = @user.authored_rootes
     end
 
     def rootes_index 
-        @user = User.find(params[:id])
+        find_user
+        #@user = User.find(params[:id])
         @rootes = @user.authored_rootes
         render template: 'rootes/index'
     end
 
     def roote 
-        @user = User.find(params[:id])
+        find_user
+        #@user = User.find(params[:id])
         @roote = Roote.find(params[:roote_id])
         render template: 'rootes/show'
     end
@@ -34,5 +37,9 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:username, :email, :password)
+    end
+
+    def find_user
+        @user = User.find(params[:id])
     end
 end
