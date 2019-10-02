@@ -17,11 +17,11 @@ class CommentsController < ApplicationController
     end  
 
     def show 
-        @comment = Comment.find(params[:id])
+        find_comment
     end
 
-    def destroy 
-        @comment = Comment.find(params[:id])
+    def destroy
+        find_comment
         if @comment.user_id == @user 
             @comment.destroy
             redirect_to user_path(@user)
@@ -32,6 +32,10 @@ class CommentsController < ApplicationController
 
     def comment_params 
         params.require(:comment).permit(:content, :rating)
+    end
+
+    def find_comment
+        @comment = Comment.find(params[:id])
     end
 
     def set_roote 
