@@ -92,6 +92,15 @@
         padding: 10px;
         margin: 20px auto;
     }
+
+    span.rating {
+      font-weight: 700;
+    }
+
+    span.date {
+      font-size: 12px;
+      color:  #b3b3b3;
+    }
   }
   
   @media screen and (max-width: 600px) {

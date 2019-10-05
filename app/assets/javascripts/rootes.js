@@ -17,10 +17,13 @@ renderRootes() [
 
 renderRoote() {
     let rooteComments = this.comments.map(comment => {
-        return (`<p>${comment.content}</p>`)
+        return (`
+            <p>${comment.content}</p>
+        `)
     }).join('')
 
     return (`<h2>${this.name}</br>Category: ${this.category}</br>Location: ${this.location}</br>Difficulty: ${this.difficulty}</br>Comments: ${rooteComments}<br></br></h2></a>`)
+    }
 }
 
 function getRootes() {
