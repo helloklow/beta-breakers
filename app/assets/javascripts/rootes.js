@@ -1,3 +1,9 @@
+document.getElementById("user-rootes").addEventListener("click", function(r) {
+    if(r.target && r.target.idName == "user-beta-link") {
+        console.log("works")
+    }
+})
+
 class Roote {
     constructor(roote) {
         this.id = roote.id
