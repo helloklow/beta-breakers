@@ -1,8 +1,20 @@
-document.getElementById("user-rootes").addEventListener("click", function(r) {
-    if(r.target && r.target.idName == "user-beta-link") {
-        console.log("works")
-    }
-})
+function rooteButton() {
+    document.querySelector('.view-user-rootes').addEventListener("click", function(e) {
+        e.preventDefault
+        reqRootes()
+    }, {once, true})
+}
+
+function reqRootes() {
+    fetch('http://localhost:3000/rootes.json')
+        .then((resp) => resp.json())
+        .then((data) => {
+            let rootesData = data
+            setRootes(rootesData)
+        })
+}
+
+
 
 class Roote {
     constructor(roote) {
@@ -16,32 +28,3 @@ class Roote {
         this.comments = roote.comments
     }
 }
-
-renderRootes() {
-    return (`<a href="/rootes/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</br></h1></a>`)
-}
-
-renderRoote() {
-    let rooteComments = this.comments.map(comment => {
-        return (`
-            <p>${comment.content}</p>
-        `)
-    }).join('')
-
-    return (`<h2>${this.name}</br>Category: ${this.category}</br>Location: ${this.location}</br>Difficulty: ${this.difficulty}</br>Comments: ${rooteComments}<br></br></h2></a>`)
-    }
-}
-
-function getRootes() {
-    let rootesDiv = document.getElementById('user-rootes');
-    fetch('https://localhost:3000/rootes.json')
-    .then(resp => resp.json())
-    .then(rootes => {
-        rootesDiv.innerHTML = '';
-        for (let i = 0, len = rootes.length; i < len; ++i) {
-            const rooteObj = new Roote(rootes[i]);
-            rootesDiv.innerHTML += rooteObj.displayRoote('user_rootes');                  
-        }
-    })
-}
-
