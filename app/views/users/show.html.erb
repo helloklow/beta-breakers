@@ -11,13 +11,14 @@
 <%= button_to 'View All', rootes_path, method: :get %><br><br>
 </div>
 
-<div id="user-rootes"><h4><b> Your Beta Collection </b></h4>
+<div id="user-rootes"><h4>
+<b> Your Beta Collection </b></h4>
 <% @rootes.each do |r| %>
     <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
 <% end %>
 </div>
 
-<%= link_to 'View Your Beta', '#', id: 'user-beta-link' %><br>
+<button class="view-user-rootes" onclick=rooteButtonClick()> View Your Beta </button>
 <%= button_to 'Add Beta', new_roote_path(@user), method: :get %><br><br>
 
 <%= link_to 'Logout', logout_path, method: :delete %><br><br>
