@@ -17,9 +17,9 @@ class Roote {
     }
 }
 
-renderRootes() [
+renderRootes() {
     return (`<a href="/rootes/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</br></h1></a>`)
-]
+}
 
 renderRoote() {
     let rooteComments = this.comments.map(comment => {
