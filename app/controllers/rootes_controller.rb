@@ -7,14 +7,21 @@ class RootesController < ApplicationController
         @roote = Roote.new(roote_params)
         @roote.author_id = @user
         if @roote.save 
-            redirect_to roote_path(@roote)
+            respond_to do |format|
+                format.html {redirect_to roote_path(@roote)}
+                format.json {render json: @roote, status: 201}
+            end
         else 
-            render 'new'
+            render :new
         end
     end 
 
     def show 
         find_roote
+        respond_to do |format|
+            format.html
+            format.json {render json: @roote, status: 201}
+        end
     end
 
     def index
