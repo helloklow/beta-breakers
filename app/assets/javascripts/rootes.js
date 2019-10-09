@@ -5,16 +5,33 @@ function rooteButton() {
     }, {once, true})
 }
 
-function reqRootes() {
+function requestRootes(){
     fetch('http://localhost:3000/rootes.json')
         .then((resp) => resp.json())
         .then((data) => {
             let rootesData = data
-            setRootes(rootesData)
+            setRootes(rootessData)
         })
 }
 
+function setRootes(rootesData) {
+    let mainArea = document.querySelector('div.main')
+    let newMain = document.createElement('div')
+    let rootesList = document.createElement('ul')
 
+    newMain.innerHTML = '<h1> Your Beta </h1>'
+
+    rootesData.forEach(function(roote){
+        let b = new Roote(roote)
+        rootesList.innerHTML += `<li id=${b.id}><button onclick=rooteDetails()>${b.name}</button></li>`
+    })  
+
+    newMain.appendChild(rootesList)
+    
+    newMain.innerHTML += `<button id="newUnitForm" onclick="addNewUnitFormListener()"> Add New Unit </button>` 
+
+    mainArea.innerHTML = newMain.innerHTML
+}
 
 class Roote {
     constructor(roote) {
