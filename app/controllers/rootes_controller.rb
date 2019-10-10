@@ -25,16 +25,12 @@ class RootesController < ApplicationController
     end
 
     def index
-        if params[:user_id]
-            @rootes = User.find(params[:user_id]).rootes
-        else    
-            if params[:name]
-                @rootes = Roote.where('name LIKE ?', "%#{params[:name]}%")
-            else
-                @rootes = Roote.all 
-            end
+        @rootes = current_user.uniq_rootes
+        respond_to do |format|
+            format.html
+            format.json {render json: @rootes, status: 200 }
         end
-    end 
+    end
 
     def edit 
         find_roote

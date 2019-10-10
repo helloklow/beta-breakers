@@ -1,9 +1,9 @@
-function rooteButton() {
-    document.querySelector('.view-user-rootes').addEventListener("click", function(e) {
+function rooteButton(){
+    document.querySelector('.user-rootes').addEventListener("click", function(e){
         e.preventDefault
-        reqRootes()
-    }, {once, true})
-}
+        requestRootes()
+    }, {once: true})
+} 
 
 function requestRootes(){
     fetch('http://localhost:3000/rootes.json')

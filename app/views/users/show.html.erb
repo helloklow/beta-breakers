@@ -8,7 +8,7 @@
 <%= link_to 'Sport', rootes_sport_path %><br>
 <%= link_to 'Trad / Aid', rootes_trad_aid_path %><br>
 <%= link_to 'Ice / Alpine', rootes_ice_alpine_path %><br>
-<%= link_to '-View All-', rootes_path, method: :get %><br><br>
+<%= link_to '- View All -', rootes_path, method: :get %><br><br>
 </div>
 
 <div id="user-rootes"><h4>
@@ -19,7 +19,7 @@
 </div>
 
 <%= button_to 'Add Beta', new_roote_path(@user), method: :get %>
-<button class="view-user-rootes" onclick=rooteButton()> View Your Beta </button><br><br>
+<button class="user-rootes" onclick=rooteButton()> View Your Beta </button><br><br>
 
 <%= link_to 'Logout', logout_path, method: :delete %><br><br>
 </center>
