@@ -22,8 +22,8 @@ function setRootes(rootesData) {
     newMain.innerHTML = '<h1> Your Beta </h1>'
 
     rootesData.forEach(function(roote){
-        let b = new Roote(roote)
-        rootesList.innerHTML += `<li id=${b.id}><button onclick=rooteDetails()>${b.name}</button></li>`
+        let r = new Roote(roote)
+        rootesList.innerHTML += `<li id=${r.id}><button onclick=rooteDetails()>${r.name}</button></li>`
     })  
 
     newMain.appendChild(rootesList)
