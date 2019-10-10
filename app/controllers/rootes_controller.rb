@@ -25,7 +25,7 @@ class RootesController < ApplicationController
     end
 
     def index
-        @rootes = current_user.uniq_rootes
+        @rootes = current_user.user_rootes
         respond_to do |format|
             format.html
             format.json {render json: @rootes, status: 200 }
