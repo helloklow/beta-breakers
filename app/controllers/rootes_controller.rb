@@ -19,7 +19,7 @@ class RootesController < ApplicationController
     def show 
         find_roote
         respond_to do |format|
-            format.html {render :index}
+            format.html 
             format.json {render json: @roote, status: 201}
         end
     end
@@ -27,7 +27,7 @@ class RootesController < ApplicationController
     def index
         @rootes = current_user.user_rootes
         respond_to do |format|
-            format.html
+            format.html 
             format.json {render json: @rootes, status: 200 }
         end
     end

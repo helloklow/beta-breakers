@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :username, :email, presence: true, uniqueness: true
 
     def user_rootes
-        self.rootes.uniq
+        self.authored_rootes
     end
 
     def self.find_or_create_by_omniauth(auth_hash)
