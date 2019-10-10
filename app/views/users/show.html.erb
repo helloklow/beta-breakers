@@ -12,14 +12,13 @@
 </div>
 
 <div id="user-rootes"><h4>
-<b> Your Beta Collection </b></h4>
+<b> Your Beta Collection: </b></h4>
 <% @rootes.each do |r| %>
     <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
 <% end %>
-</div>
+</div><br>
 
-<%= button_to 'Add Beta', new_roote_path(@user), method: :get %>
-<button class="user-rootes" onclick=rooteButton()> View Your Beta </button><br><br>
+<%= button_to 'Add Beta', new_roote_path(@user), method: :get %><br><br>
 
 <%= link_to 'Logout', logout_path, method: :delete %><br><br>
 </center>

@@ -1,9 +1,0 @@
-<div class="styled">
-<center>
-<h1> <%= @user.username.split[0].capitalize %>'s Beta </h1><br>
-
-<div class="rootes-by-user">
-<% @rootes.each do |b|%>
-    <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
-<% end %>
-</div>
