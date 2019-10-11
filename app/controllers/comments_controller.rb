@@ -20,6 +20,15 @@ class CommentsController < ApplicationController
         find_comment
     end
 
+    def index
+        set_roote
+        @comments = @roote.comments
+        respond_to do |format|
+            format.html 
+            format.json {render json: @comments, status: 200 }
+        end
+    end
+
     def destroy
         find_comment
         if @comment.user_id == @user 

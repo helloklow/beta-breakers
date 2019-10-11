@@ -1,0 +1,10 @@
+<div id="comments">
+<h5><b> Comments: </b></h5>
+<% @roote.comments.all.each do |c| %>
+    <b> <%= c.user.username.split[0].capitalize %> says: </b> <%= c.content %>
+    <small> <%= link_to 'Delete', roote_comment_path(c), method: :delete %> </small><br>
+    <span class="rating"> <%= c.rating %>/5 stars </span>
+    <span class="date"> <%= time_ago_in_words(c.created_at) %> ago </span><br>
+    <br>
+<% end %><br>
+</div>

@@ -1,3 +1,5 @@
+$('.comments').click(alert('Test'));
+
 class Comment {
     constructor(comment) {
         this.id = comment.id
