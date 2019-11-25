@@ -1,4 +1,4 @@
-# Beta Breakers - TESTING
+# Beta Breakers
 
 Beta Breakers is a digital guidebook for rock climbing and canyoneering routes around the globe. Adventurers can create an account using their email address or Facebook OAuth. This is a space for adventurers to share beta for new climbing and canyoneering routes, view established beta, and add comments and ratings to entries. Go beyond the guidebook!
 
