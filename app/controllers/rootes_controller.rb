@@ -25,7 +25,7 @@ class RootesController < ApplicationController
     end
 
     def index
-        @rootes = Roote.all
+        find_roote
         respond_to do |format|
             format.html 
             format.json {render json: @rootes, status: 200 }
