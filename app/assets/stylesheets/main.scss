@@ -89,9 +89,19 @@
         background:  #eee;
         opacity: 0.95;
         border-radius: 2%;
-        width: 600px;
+        width: 800px;
         padding: 10px;
         margin: 20px auto;
+    }
+    
+    div.comments {
+      border: 1px solid #ccc; 
+      border-radius: 1%;
+      margin: 10px;
+      padding: 5px 10px 0px 10px;
+      width: 500px;
+      height: 100px;
+
     }
 
     span.rating {

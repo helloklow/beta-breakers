@@ -11,11 +11,12 @@
 
 <h5><b> Comments: </b></h5>
 <% @roote.comments.all.each do |c| %>
-    <b> <%= c.user.username.split[0].capitalize %> says: </b> <%= c.content %>
-    <small> <%= link_to 'Delete', roote_comment_path(c), method: :delete %> </small><br>
-    <span class="rating"> <%= c.rating %>/5 stars </span>
+    <div class="comments">
+    <b> <%= c.user.username.split[0].capitalize %> says: </b> <%= c.content %><br>
+    <span class="rating"><small><%= c.rating %>/5 stars </span></small><br>
     <span class="date"> <%= time_ago_in_words(c.created_at) %> ago </span><br>
-    <br>
+    <small> <%= link_to 'Delete', roote_comment_path(c), method: :delete %> </small><br><br>
+    </div>
 <% end %><br>
 
 <%= button_to 'Add Comment', new_roote_comment_path(@roote), method: :get %><br><br>
