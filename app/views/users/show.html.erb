@@ -2,7 +2,6 @@
 <center>
 <h1> Welcome, <%= @user.username.split[0].capitalize %>! </h1><br>
 
-<div id="all-rootes">
 <h4><b> Beta Finder: </b></h4>
 <%= link_to 'Canyon', rootes_canyon_path %><br>
 <%= link_to 'Boulder', rootes_boulder_path %><br>
@@ -10,15 +9,14 @@
 <%= link_to 'Trad / Aid', rootes_trad_aid_path %><br>
 <%= link_to 'Ice / Alpine', rootes_ice_alpine_path %><br>
 <%= link_to '- View All -', rootes_path, method: :get %><br><br>
-</div>
 
-<div id="user-rootes"><h4>
-<b> Your Beta Collection: </b></h4>
+<h4><b> Your Beta Collection: </b></h4>
 <% @rootes.each do |r| %>
     <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
-<% end %>
-</div><br>
+<% end %><br>
 
+# Delete link_to?
+<%= link_to 'View Your Beta', '#', id: 'user-beta-link' %><br> 
 <%= button_to 'Add Beta', new_roote_path(@user), method: :get %><br><br>
 
 <%= link_to 'Logout', logout_path, method: :delete %><br><br>

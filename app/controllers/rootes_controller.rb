@@ -7,28 +7,25 @@ class RootesController < ApplicationController
         @roote = Roote.new(roote_params)
         @roote.author_id = @user
         if @roote.save 
-            respond_to do |format|
-                format.html {redirect_to roote_path(@roote)}
-                format.json {render json: @roote, status: 201}
-            end
+            redirect_to roote_path(@roote)
         else 
-            render :new
+            render 'new'
         end
     end 
 
     def show 
         find_roote
-        respond_to do |format|
-            format.html 
-            format.json {render json: @roote, status: 201}
-        end
     end
 
     def index
-        find_roote
-        respond_to do |format|
-            format.html 
-            format.json {render json: @rootes, status: 200 }
+        if params[:user_id]
+            @rootes = User.find(params[:user_id]).rootes 
+        else
+            if params[:name]
+                @rootes = Roote.where('name LIKE ?', "%#{params[:name]}%")
+            else
+                @rootes = Roote.all 
+            end 
         end
     end
 
