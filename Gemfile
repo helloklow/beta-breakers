@@ -29,6 +29,7 @@ gem 'pry'
 gem "devise", ">= 4.7.1"
 gem 'jquery-rails'
 gem 'active_model_serializers'
+gem 'database_cleaner'
 
 # GitHub security updates
 gem "rack", ">= 2.0.8"
