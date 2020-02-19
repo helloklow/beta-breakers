@@ -26,7 +26,7 @@ gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'pry'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'jquery-rails'
 gem 'active_model_serializers'
 
