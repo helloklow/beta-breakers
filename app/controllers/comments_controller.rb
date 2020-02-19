@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
     end
 
     def find_comment
-        @comment = Comment.find(params[:id])
+        @comment = Comment.find_by(params[:id])
     end
 
     def set_roote 
