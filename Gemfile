@@ -33,6 +33,7 @@ gem 'active_model_serializers'
 # GitHub security updates
 gem "rack", ">= 2.0.8"
 gem "loofah", ">= 2.3.1"
+gem "rubyzip", ">= 1.3.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
