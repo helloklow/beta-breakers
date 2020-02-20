@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :set_roote, only: [:new, :create, :show, :destroy]
+    before_action :set_roote, only: [:new, :create, :show]
 
     def new
         @comment = Comment.new 
@@ -22,9 +22,11 @@ class CommentsController < ApplicationController
 
     def destroy
         find_comment
-        if @comment.user_id == @user 
+        if @comment.user_id === @user 
             @comment.destroy
             redirect_to user_path(@user)
+        else 
+            flash[:error] = "Cannot delete another user's comment."
         end
     end
 
@@ -35,7 +37,7 @@ class CommentsController < ApplicationController
     end
 
     def find_comment
-        @comment = Comment.find_by(params[:id])
+        @comment = Comment.find(params[:id])
     end
 
     def set_roote 
