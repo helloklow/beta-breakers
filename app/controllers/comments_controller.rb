@@ -22,9 +22,9 @@ class CommentsController < ApplicationController
 
     def destroy
         find_comment
-        if @comment.user_id == @user.id 
+        if @comment.user == current_user
             @comment.destroy
-            redirect_to user_path(@user)
+            redirect_to user_path(current_user)
         else 
             flash[:error] = "Cannot delete another user's comment."
         end
