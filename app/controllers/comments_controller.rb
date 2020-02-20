@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
 
     def destroy
         find_comment
-        if @comment.user_id === @user 
+        if @comment.user_id == @user.id 
             @comment.destroy
             redirect_to user_path(@user)
         else 

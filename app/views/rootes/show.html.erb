@@ -15,7 +15,10 @@
     <b> <%= c.user.username.split[0].capitalize %> says: </b> <%= c.content %><br>
     <span class="rating"><small><%= c.rating %>/5 stars </span></small><br>
     <span class="date"> <%= time_ago_in_words(c.created_at) %> ago </span><br>
-    <small> <%= link_to 'Delete', roote_comment_path(c), method: :delete %> </small><br><br>
+
+    <% if current_user && current_user == comment.user %>
+        <small> <%= link_to 'Delete', roote_comment_path(c), method: :delete %> </small><br><br>
+    <% end %>
     </div>
 <% end %><br>
 
