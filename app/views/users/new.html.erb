@@ -11,12 +11,12 @@
 
     <%= f.password_field :password, class: "form-text", placeholder: "Password" %><br>
 
-    <%= f.submit 'Sign Up' %>
+    <%= f.submit 'Sign Up', class: "form-btn" %>
 <% end %><br><br>
 
-<%= link_to 'Sign Up via Facebook', '/auth/facebook' %><br>
-<%= link_to 'Login', '/login' %><br>
-<%= link_to 'Home', '/' %>
+<%= link_to 'Sign Up via Facebook', '/auth/facebook', class: "nav-btn" %><br>
+<%= link_to 'Login', '/login', class: "nav-btn" %><br>
+<%= link_to 'Home', '/', class: "nav-btn" %>
 <br><br><br>
 </center>
 </div>
