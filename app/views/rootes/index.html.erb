@@ -1,13 +1,15 @@
 <div class="styled">
 <center>
-<h1> All Beta </h1><br>
+<%= render partial: "layouts/header" %>
+
+<h2><b> All Beta </b></h1><br>
 
 <% @rootes.each do |r| %>
     <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
 <% end %><br><br>
 
 <%= form_tag(rootes_path, method: :get) do %>
-    <%= text_field_tag :name %>
+    <%= text_field_tag :name%><br>
     <%= submit_tag 'Search Routes' %>
 <% end %><br><br>
 

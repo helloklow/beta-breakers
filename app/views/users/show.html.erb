@@ -1,6 +1,11 @@
 <div class="styled">
 <center>
-<h1> Welcome, <%= @user.username.split[0].capitalize %>! </h1><br>
+<%= link_to user_path(@user) do %>
+    <%= image_tag "beta-breakers.png", alt: "Beta Breakers", width: "250", class: "logo" %>
+ <% end %>
+ <br><br>
+
+<h2><b> Welcome, <%= @user.username.split[0].capitalize %>! </b></h2><br>
 
 <h4><b> Beta Finder: </b></h4>
 <%= link_to 'Canyon', rootes_canyon_path %><br>

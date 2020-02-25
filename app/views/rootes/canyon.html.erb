@@ -1,6 +1,8 @@
 <div class="styled">
 <center>
-<h2> Canyoneering Beta </h2><br>
+<%= render partial: "layouts/header" %>
+
+<h2><b> Canyoneering Beta </b></h2><br>
 
 <% @rootes.each do |r| %>
     <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
