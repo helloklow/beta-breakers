@@ -1,14 +1,12 @@
 <div class="styled">
-<center>
-<h1> New Beta </h1>
+    <center>
+        <%= render partial: "layouts/header" %>
 
-<%= form_for @roote do |f| %> 
-    <%= render partial: 'layouts/errors', locals: {obj: @roote} %><br>
+        <%= form_for @roote do |f| %> 
+            <%= render partial: 'layouts/errors', locals: {obj: @roote} %><br>
     
-    <%= render partial: 'form', locals: {f: f} %>
-    <%= f.submit 'Create' %>
-<% end %><br><br>
-
-<%= render partial: "layouts/footer" %><br><br><br>
-</center>
+            <%= render partial: 'form', locals: {f: f} %>
+            <%= f.submit 'Add Beta' %>
+        <% end %><br><br><br>
+    </center>
 </div>

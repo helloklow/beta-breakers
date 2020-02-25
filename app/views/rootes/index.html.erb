@@ -1,18 +1,16 @@
 <div class="styled">
-<center>
-<%= render partial: "layouts/header" %>
+    <center>
+        <%= render partial: "layouts/header" %><br><br>
 
-<h2><b> All Beta </b></h1><br>
+        <% @rootes.each do |r| %>
+            <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
+        <% end %><br><br>
 
-<% @rootes.each do |r| %>
-    <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
-<% end %><br><br>
+        <%= form_tag(rootes_path, method: :get) do %>
+            <%= text_field_tag :name %><br>
+            <%= submit_tag 'Search Routes' %>
+        <% end %><br><br>
 
-<%= form_tag(rootes_path, method: :get) do %>
-    <%= text_field_tag :name%><br>
-    <%= submit_tag 'Search Routes' %>
-<% end %><br><br>
-
-<%= render partial: "layouts/footer" %><br><br>
-</center>
+        <%= render partial: "layouts/footer" %><br><br>
+    </center>
 </div>

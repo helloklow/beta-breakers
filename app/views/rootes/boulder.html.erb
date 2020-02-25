@@ -1,12 +1,13 @@
 <div class="styled">
-<center>
-<%= render partial: "layouts/header" %>
-<h2><b> Bouldering Beta </b></h2>
+    <center>
+        <%= render partial: "layouts/header" %>
 
-<% @rootes.each do |r| %>
-    <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
-<% end %><br><br>
+        <h3><b>Bouldering</b></h3>
 
-<%= render partial: "layouts/footer" %><br><br>
-</center>
+        <% @rootes.each do |r| %>
+            <b><%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>)</b> <small><%= r.location %></small><br>
+        <% end %><br><br>
+
+        <%= render partial: "layouts/footer" %><br><br>
+    </center>
 </div>

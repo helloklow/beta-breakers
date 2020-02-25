@@ -1,24 +1,21 @@
 <div class="styled">
-<center>
-<%= link_to user_path(@user) do %>
-    <%= image_tag "beta-breakers.png", alt: "Beta Breakers", width: "250", class: "logo" %>
- <% end %>
- <br><br>
+    <center>
+        <%= render partial: "layouts/header" %>
 
-<%= form_for [@roote, @comment] do |f| %> 
-    <%= render partial: 'layouts/errors', locals: {obj: @comment} %><br>
+        <%= form_for [@roote, @comment] do |f| %> 
+            <%= render partial: 'layouts/errors', locals: {obj: @comment} %><br>
 
-    <%= f.text_area :content, placeholder: "Comment", cols: "50", rows: "5" %><br><br>
+            <%= f.text_area :content, placeholder: "Comment", cols: "50", rows: "5" %><br><br>
 
-    <%= f.label :rating %>: <br>
-    <%= f.radio_button :rating, "1" %> <small> 1 </small>
-    <%= f.radio_button :rating, "2" %> <small> 2 </small>
-    <%= f.radio_button :rating, "3" %> <small> 3 </small>
-    <%= f.radio_button :rating, "4" %> <small> 4 </small>
-    <%= f.radio_button :rating, "5" %> <small> 5 </small><br>
-    <small> (1 to 5 stars) </small><br><br>
+            <%= f.label :rating %>: <br>
+            <%= f.radio_button :rating, "1" %> <small> 1 </small>
+            <%= f.radio_button :rating, "2" %> <small> 2 </small>
+            <%= f.radio_button :rating, "3" %> <small> 3 </small>
+            <%= f.radio_button :rating, "4" %> <small> 4 </small>
+            <%= f.radio_button :rating, "5" %> <small> 5 </small><br>
+            <small> (1 to 5 stars) </small><br><br>
 
-    <%= f.submit 'Add Comment' %><br><br><br>
-<% end %>
-</center>
+            <%= f.submit 'Add Comment' %><br><br><br>
+        <% end %>
+    </center>
 </div>
