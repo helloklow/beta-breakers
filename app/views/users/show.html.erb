@@ -1,9 +1,6 @@
 <div class="styled">
 <center>
-<%= link_to user_path(@user) do %>
-    <%= image_tag "beta-breakers.png", alt: "Beta Breakers", width: "250", class: "logo" %>
- <% end %>
- <br><br>
+<%= render partial: "layouts/header" %>
 
 <h2><b> Welcome, <%= @user.username.split[0].capitalize %>! </b></h2><br>
 
