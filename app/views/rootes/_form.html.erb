@@ -1,18 +1,13 @@
-    <%= f.label :name %>: 
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name, autofocus: true, placeholder: "Name", size: "30" %><br><br>
 
-    <%= f.label :location %>: 
-    <%= f.text_field :location %><br>
+    <%= f.text_field :location, placeholder: "Location", size: "30" %><br><br>
 
-    <%= f.label :category %>: 
-    <%= f.radio_button :category, 'Canyon' %> <small> Canyon </small>
-    <%= f.radio_button :category, 'Boulder' %> <small> Boulder </small>
-    <%= f.radio_button :category, 'Sport' %> <small> Sport </small>
-    <%= f.radio_button :category, 'Trad/Aid' %> <small> Trad/Aid </small>
-    <%= f.radio_button :category, 'Ice/Alpine' %> <small> Ice/Alpine </small><br>
+    <%= f.radio_button :category, 'Canyon' %> Canyon 
+    <%= f.radio_button :category, 'Boulder' %> Boulder 
+    <%= f.radio_button :category, 'Sport' %> Sport 
+    <%= f.radio_button :category, 'Trad/Aid' %> Trad/Aid 
+    <%= f.radio_button :category, 'Ice/Alpine' %> Ice/Alpine <br><br>
 
-    <%= f.label :difficulty %>: 
-    <%= f.text_field :difficulty %><br>
+    <%= f.text_field :difficulty, placeholder: "Difficulty" %><br><br>
 
-    <%= f.label :content %>: 
-    <%= f.text_area :content %><br>
+    <%= f.text_area :content, placeholder: "Description", cols: "50", rows: "10" %><br>
