@@ -5,11 +5,9 @@
 <%= flash[:error] %>
 
 <%= form_for @user, url: login_path do |f| %>
-    <%= f.label :email %>: 
-    <%= f.text_field :email %><br>
+    <%= f.text_field :email, class: "form-text", autofocus: true, placeholder: "Email" %><br>
 
-    <%= f.label :password %>: 
-    <%= f.password_field :password %><br>
+    <%= f.password_field :password, class: "form-text", placeholder: "Password" %><br>
 
     <%= f.submit 'Login' %>
 <% end %><br><br>

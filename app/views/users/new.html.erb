@@ -5,18 +5,18 @@
 <%= form_for @user, url: signup_path do |f| %>
     <%= render partial: 'layouts/errors', locals: {obj: @user} %>
     
-    <%= f.label :email %>: 
-    <%= f.email_field :email %><br>
+    <%= f.email_field :email, class: "form-text", autofocus: true, placeholder: "Email" %><br>
 
-    <%= f.label :username %>: 
-    <%= f.text_field :username %><br>
+    <%= f.text_field :username, class: "form-text", placeholder: "Username" %><br>
 
-    <%= f.label :password %>: 
-    <%= f.password_field :password %><br>
+    <%= f.password_field :password, class: "form-text", placeholder: "Password" %><br>
 
     <%= f.submit 'Sign Up' %>
 <% end %><br><br>
 
-<%= render partial: "layouts/login" %><br><br><br>
+<%= link_to 'Sign Up via Facebook', '/auth/facebook' %><br>
+<%= link_to 'Login', '/login' %><br>
+<%= link_to 'Home', '/' %>
+<br><br><br>
 </center>
 </div>
