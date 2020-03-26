@@ -2,21 +2,26 @@
     <center>
         <%= render partial: "layouts/header" %><br>
 
-        <h4><b> <%= @user.username.split[0].capitalize %>'s Beta: </b></h4>
-        <% @rootes.each do |r| %>
-            <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
-        <% end %>
+        <div class="user-rootes">
+            <h4><b> <%= @user.username.split[0].capitalize %>'s Beta: </b></h4>
+            <% @rootes.each do |r| %>
+                <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
+            <% end %>
+            <br><%= button_to 'Add Beta', new_roote_path(@user), method: :get %><br><br>
+        </div>
 
-        <%= button_to 'Add Beta', new_roote_path(@user), method: :get %><br><br>
+        <div class="all-rootes">
+            <h4><b> Browse Beta: </b></h4>
+            <%= link_to 'Canyon', rootes_canyon_path %><br>
+            <%= link_to 'Boulder', rootes_boulder_path %><br>
+            <%= link_to 'Sport', rootes_sport_path %><br>
+            <%= link_to 'Trad / Aid', rootes_trad_aid_path %><br>
+            <%= link_to 'Ice / Alpine', rootes_ice_alpine_path %><br><br>
+            <%= button_to 'View All', rootes_path, method: :get %><br><br>
+        </div>
 
-        <h4><b> Browse Beta: </b></h4>
-        <%= link_to 'Canyon', rootes_canyon_path %><br>
-        <%= link_to 'Boulder', rootes_boulder_path %><br>
-        <%= link_to 'Sport', rootes_sport_path %><br>
-        <%= link_to 'Trad / Aid', rootes_trad_aid_path %><br>
-        <%= link_to 'Ice / Alpine', rootes_ice_alpine_path %><br>
-        <%= link_to '- View All -', rootes_path, method: :get %><br><br><br>
-
-        <%= button_to 'Logout', logout_path, method: :delete %><br><br>
+        <div class="footer">
+            <%= button_to 'Logout', logout_path, method: :delete %><br><br>
+        </div>
     </center>
 </div>
