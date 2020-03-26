@@ -3,7 +3,7 @@
         <%= render partial: "layouts/header" %><br>
 
         <div class="user-rootes">
-            <h4><b> <%= @user.username.split[0].capitalize %>'s Beta: </b></h4>
+            <h4 class="main-header"><b> <%= @user.username.split[0].capitalize %>'s Beta </b></h4>
             <% @rootes.each do |r| %>
                 <%= link_to r.name, roote_path(r) %> - <%= r.category %> (<%= r.difficulty %>) - <small><%= link_to 'Edit', edit_roote_path(r), method: :get %> | <%= link_to 'Delete', roote_path(r), method: :delete %></small><br>
             <% end %>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="all-rootes">
-            <h4><b> All Beta: </b></h4>
+            <h4 class="main-header"><b> Browse Beta </b></h4>
             <%= link_to 'Canyon', rootes_canyon_path %><br>
             <%= link_to 'Boulder', rootes_boulder_path %><br>
             <%= link_to 'Sport', rootes_sport_path %><br>
